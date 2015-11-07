@@ -1,0 +1,14 @@
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ServerDatabase\bin\Debug\ServerDatabase.dll
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ServerDatabase\bin\Debug\ServerDatabase.pdb
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ServerDatabase\bin\Debug\ServerModel.dll
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ServerDatabase\bin\Debug\ServerModel.pdb
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ServerDatabase\obj\Debug\ServerDatabase.csprojResolveAssemblyReference.cache
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ServerDatabase\obj\Debug\ServerDatabase.dll
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ServerDatabase\obj\Debug\ServerDatabase.pdb
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerDatabase\bin\Debug\ServerDatabase.dll
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerDatabase\bin\Debug\ServerDatabase.pdb
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerDatabase\bin\Debug\ServerModel.dll
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerDatabase\bin\Debug\ServerModel.pdb
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerDatabase\obj\Debug\ServerDatabase.csprojResolveAssemblyReference.cache
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerDatabase\obj\Debug\ServerDatabase.dll
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerDatabase\obj\Debug\ServerDatabase.pdb

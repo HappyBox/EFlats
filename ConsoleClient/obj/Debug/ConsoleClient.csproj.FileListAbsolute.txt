@@ -1,0 +1,12 @@
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ConsoleClient\bin\Debug\ConsoleClient.exe.config
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ConsoleClient\bin\Debug\ConsoleClient.exe
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ConsoleClient\bin\Debug\ConsoleClient.pdb
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ConsoleClient\obj\Debug\ConsoleClient.exe
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ConsoleClient\obj\Debug\ConsoleClient.pdb
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ConsoleClient\bin\Debug\ConsoleClient.exe.config
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ConsoleClient\obj\Debug\ConsoleClient.exe
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ConsoleClient\obj\Debug\ConsoleClient.pdb
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ConsoleClient\bin\Debug\ConsoleClient.exe
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ConsoleClient\bin\Debug\ConsoleClient.pdb
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache

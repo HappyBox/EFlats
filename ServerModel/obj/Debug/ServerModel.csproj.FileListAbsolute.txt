@@ -1,0 +1,10 @@
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ServerModel\bin\Debug\ServerModel.dll
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ServerModel\bin\Debug\ServerModel.pdb
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.csprojResolveAssemblyReference.cache
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.dll
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\LECTURES\#8\WCFHelloWorld\EFLATS\Miroslav\Ver0.2\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.pdb
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerModel\bin\Debug\ServerModel.dll
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerModel\bin\Debug\ServerModel.pdb
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.csprojResolveAssemblyReference.cache
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.dll
+C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.pdb
