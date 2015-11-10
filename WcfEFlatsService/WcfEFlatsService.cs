@@ -19,10 +19,11 @@ namespace WcfEFlatsService
             int score, int numberOfChildren, bool pet, int numberOfCohabiters, bool disabled, DateTime dateOfCreation,
             string name, string surname, string address, string postCode, string city, string country, string phone)
         {
+            ctrStudentObj = new ServerController.CtrStudent();
 
             lock (LockObject)
             {
-                ctrStudentObj = new ServerController.CtrStudent();
+                Console.WriteLine();
                 Console.WriteLine("AddStudent() executed by Thread: {0}, at: {1}",
                      Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
 
@@ -36,10 +37,12 @@ namespace WcfEFlatsService
         public bool AddLandlord(string email, string password, bool confirmed, DateTime dateOfCreation,
             string name, string surname, string address, string postCode, string city, string country, string phone)
         {
+            ctrLandlordObj = new ServerController.CtrLandlord();
 
             lock (LockObject)
             {
-                ctrLandlordObj = new ServerController.CtrLandlord();
+
+                Console.WriteLine();
                 Console.WriteLine("AddLandlord() executed by Thread: {0}, at: {1}",
                      Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
 
@@ -47,6 +50,42 @@ namespace WcfEFlatsService
                 return ctrLandlordObj.AddLandlord(email, password, confirmed, dateOfCreation,
                     name, surname, address, postCode, city, country, phone);
             }
+        }
+
+        public bool AddApartment(int landlordId, int type, string address, int zipCode, int rentPrice, int deposit, DateTime avaiable, DateTime dateFormCreation)
+        {
+            ctrLandlordObj = new ServerController.CtrLandlord();
+
+            lock (LockObject)
+            {
+
+                Console.WriteLine();
+                Console.WriteLine("AddApartment() executed by Thread: {0}, at: {1}",
+                     Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
+
+                //call add student method
+                return ctrLandlordObj.AddApartment(landlordId, type, address, zipCode, rentPrice, deposit, avaiable, dateFormCreation);
+            }
+        }
+
+        public bool LoginStudent(string email, string password)
+        {
+            ctrStudentObj = new ServerController.CtrStudent();
+
+            lock (LockObject)
+            {
+
+                Console.WriteLine();
+                Console.WriteLine("LoginStudent() executed by Thread: {0}, at: {1}",
+                     Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
+            }
+            //CALL CTR
+            return false;
+        }
+
+        public bool LoginLandlord(string email, string password)
+        {
+            return false;
         }
     }
 }

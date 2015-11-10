@@ -15,7 +15,6 @@ namespace ServerModel
         private string _email;
         private string _password;
         private bool _confirmed;
-        private bool _student;
 
         //queue based attributes
         private DateTime _dateOfCreation;

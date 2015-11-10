@@ -11,23 +11,15 @@ namespace ServerDatabase
 {
     public class DbLandlord
     {
-        public bool AddLandlord(MdlLandlord landordObj)
+        public bool AddLandlord(MdlLandlord landlordObj)
         {
             try
             {
-                //CheckEmailVaild(landordObj);
+                CreateCommandMain(landlordObj).ExecuteNonQuery();
+                SetLastId(landlordObj);
 
-                CreateCommandMain(landordObj).ExecuteNonQuery();
-
-                // read Id from first table and make it the same in all other tables that is connected with users
-                string query = "Select ID form ST_Main where email = '" + landordObj.Email + "'";
-                SqlCommand sqlCommand = new SqlCommand(query, DbConnection.dbconn);
-                SqlDataReader sqlReader = sqlCommand.ExecuteReader();
-                sqlReader.Read();
-                landordObj.Id = Convert.ToInt32(sqlReader.GetValue(0));
-
-                CreateCommandQueuebased(landordObj).ExecuteNonQuery();
-                CreateCommandPersonal(landordObj).ExecuteNonQuery();
+                CreateCommandQueuebased(landlordObj).ExecuteNonQuery();
+                CreateCommandPersonal(landlordObj).ExecuteNonQuery();
 
                 DbConnection.Close();
                 return true;
@@ -39,51 +31,65 @@ namespace ServerDatabase
             }
 
         }
+        private static void SetLastId(MdlLandlord landlordObj)
+        {
+            // read Id from first table and make it the same in all other tables that is connected with users
+            string query = "Select ID from LD_Main where email = '" + landlordObj.Email + "'";
+            SqlCommand sqlCommand = new SqlCommand(query, DbConnection.dbconn);
+            SqlDataReader sqlReader = sqlCommand.ExecuteReader();
+            sqlReader.Read();
+            landlordObj.Id = Convert.ToInt32(sqlReader.GetValue(0));
+            sqlReader.Close();
+        }
 
-        private static SqlCommand CreateCommandMain(MdlLandlord landordObj)
+        private static SqlCommand CreateCommandMain(MdlLandlord landlordObj)
         {
             string query = "insert into LD_Main values ('"
-                + landordObj.Email + "','"
-                + landordObj.Password + "',"
-                + Convert.ToInt32(landordObj.Confirmed) + ")";
+                + landlordObj.Email + "','"
+                + landlordObj.Password + "',"
+                + Convert.ToInt32(landlordObj.Confirmed) + ")";
 
-            Console.Write("Thread " + Thread.CurrentThread.ManagedThreadId.ToString() + "Executed query: \n     " + query);
+            Console.Write("Thread " + Thread.CurrentThread.ManagedThreadId.ToString() + " Executed query: \n     " + query);
 
             //return SQLCommand
             return DbConnection.GetDbCommand(query);
         }
 
-        private static SqlCommand CreateCommandQueuebased(MdlLandlord landordObj)
+        private static SqlCommand CreateCommandQueuebased(MdlLandlord landlordObj)
         {
-            DateTime myDateTime = landordObj.DateOfCreation;
+            DateTime myDateTime = landlordObj.DateOfCreation;
             string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 
             string query = "insert into LD_Queue values ("
-                + landordObj.Id + ",'"
+                + landlordObj.Id + ",'"
                 + sqlFormattedDate + "')";
 
-            Console.Write("Thread " + Thread.CurrentThread.ManagedThreadId.ToString() + "Executed query: \n     " + query);
+            Console.Write("Thread " + Thread.CurrentThread.ManagedThreadId.ToString() + " Executed query: \n     " + query);
 
             //return SQLCommand
             return DbConnection.GetDbCommand(query);
         }
 
-        private static SqlCommand CreateCommandPersonal(MdlLandlord landordObj)
+        private static SqlCommand CreateCommandPersonal(MdlLandlord landlordObj)
         {
-            string query = "insert into LD_Personal values ('"
-                + landordObj.Id + ",'"
-                + landordObj.Name + "','"
-                + landordObj.Surname + "','"
-                + landordObj.Address + "','"
-                + landordObj.PostCode + "','"
-                + landordObj.City + "','"
-                + landordObj.Country + "','"
-                + landordObj.Phone + "')";
+            string query = "insert into LD_Personal values ("
+                + landlordObj.Id + ",'"
+                + landlordObj.Name + "','"
+                + landlordObj.Surname + "','"
+                + landlordObj.Address + "','"
+                + landlordObj.PostCode + "','"
+                + landlordObj.City + "','"
+                + landlordObj.Country + "','"
+                + landlordObj.Phone + "')";
 
-            Console.Write("Thread " + Thread.CurrentThread.ManagedThreadId.ToString() + "Executed query: \n     " + query);
+            Console.Write("Thread " + Thread.CurrentThread.ManagedThreadId.ToString() + " Executed query: \n     " + query);
 
             //return SQLCommand
             return DbConnection.GetDbCommand(query);
+        }
+        public bool AddApartment()
+        {
+            return false;
         }
     }
 }

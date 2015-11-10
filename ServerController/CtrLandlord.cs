@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ServerDatabase;
+using ServerModel;
 
 namespace ServerController
 {
@@ -17,10 +19,35 @@ namespace ServerController
             ServerDatabase.DbLandlord dbLandlordObj = new ServerDatabase.DbLandlord();
             ServerDatabase.DbCheckEmailExists dbCheckEmailObj = new ServerDatabase.DbCheckEmailExists();
 
-            if (dbCheckEmailObj.checkEmailExists(mdlLandlordObj.Email))
+            //if (dbCheckEmailObj.checkEmailExists(mdlLandlordObj.Email))
                 return dbLandlordObj.AddLandlord(mdlLandlordObj);
 
-            return false;
+        }
+            // int flatID
+        public bool AddApartment(int landlordId, int type, string address, int zipCode, int rentPrice, int deposit, DateTime avaiable, DateTime dateFormCreation)
+        {
+            bool dbFeedback = false;
+            switch (type)
+            {
+                //room
+                case 1:
+                    Console.WriteLine("Wrong type of flat: " + type);
+                    break;
+                //flat
+                case 2:
+                    DbFlat dbFlatObj = new DbFlat();
+                    MdlFlat mdlFlat = new MdlFlat(landlordId, type, dateFormCreation, avaiable, rentPrice, deposit, address, zipCode);
+                    dbFeedback = dbFlatObj.Add(mdlFlat);
+                    break;
+                //house
+                case 3:
+                    Console.WriteLine("Wrong type of flat: " + type);
+                    break;
+                default:
+                    Console.WriteLine("Wrong type of flat: " + type);
+                    break;
+            }
+            return dbFeedback;
         }
     }
 }

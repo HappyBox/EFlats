@@ -18,5 +18,14 @@ namespace WcfEFlatsService
         [OperationContract]
         bool AddLandlord(string email, string password, bool confirmed, DateTime dateOfCreation,
             string name, string surname, string address, string postCode, string city, string country, string phone);
+
+        [OperationContract]
+        bool AddApartment(int landlordId, int type, string address, int zipCode, int rentPrice, int deposit, DateTime avaiable, DateTime dateFormCreation);
+
+        [OperationContract]
+        bool LoginStudent(string email, string password);
+
+        [OperationContract]
+        bool LoginLandlord(string email, string password);
     }
 }

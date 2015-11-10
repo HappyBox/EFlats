@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MdlFlat.cs" />
     <Compile Include="MdlLandlord.cs" />
     <Compile Include="MdlStudent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

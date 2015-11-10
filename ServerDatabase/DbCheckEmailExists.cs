@@ -14,9 +14,10 @@ namespace ServerDatabase
         {
             return (checkLandlordEmailExists(email) || checkStudentEmailExists(email));
         }
+
         private bool checkStudentEmailExists(string email)
         {
-            string query = "Select * form ST_Main where Email='" + email + "'";
+            string query = "Select * from ST_Main where Email='" + email + "'";
 
             SqlCommand sqlCommand = new SqlCommand(query, DbConnection.dbconn);
             SqlDataReader sqlReader = sqlCommand.ExecuteReader();
@@ -32,7 +33,7 @@ namespace ServerDatabase
 
         private bool checkLandlordEmailExists(string email)
         {
-            string query = "Select * form LD_Main where Email='" + email + "'";
+            string query = "Select * from LD_Main where Email='" + email + "'";
 
             SqlCommand sqlCommand = new SqlCommand(query, DbConnection.dbconn);
             SqlDataReader sqlReader = sqlCommand.ExecuteReader();

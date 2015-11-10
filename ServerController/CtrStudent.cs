@@ -21,7 +21,7 @@ namespace ServerController
             ServerDatabase.DbStudent dbStudentObj = new ServerDatabase.DbStudent();
             ServerDatabase.DbCheckEmailExists dbCheckEmailObj = new ServerDatabase.DbCheckEmailExists();
 
-            //if (dbCheckEmailObj.checkEmailExists(mdlStudentObj.Email))                
+            if (dbCheckEmailObj.checkEmailExists(mdlStudentObj.Email))                
                 return dbStudentObj.AddStudent(mdlStudentObj);
 
             Console.WriteLine("Registration has failed due to the existing email");

@@ -22,3 +22,15 @@ C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsServi
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\WcfEFlatsService\obj\Debug\WcfEFlatsService.csprojResolveAssemblyReference.cache
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\WcfEFlatsService\obj\Debug\WcfEFlatsService.dll
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\WcfEFlatsService\obj\Debug\WcfEFlatsService.pdb
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\bin\Debug\WcfEFlatsService.dll.config
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\bin\Debug\WcfEFlatsService.dll
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\bin\Debug\WcfEFlatsService.pdb
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\bin\Debug\ServerController.dll
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\bin\Debug\ServerModel.dll
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\bin\Debug\ServerDatabase.dll
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\bin\Debug\ServerController.pdb
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\bin\Debug\ServerModel.pdb
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\bin\Debug\ServerDatabase.pdb
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\obj\Debug\WcfEFlatsService.csprojResolveAssemblyReference.cache
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\obj\Debug\WcfEFlatsService.dll
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\obj\Debug\WcfEFlatsService.pdb

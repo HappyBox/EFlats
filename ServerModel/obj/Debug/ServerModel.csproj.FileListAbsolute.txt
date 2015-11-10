@@ -8,3 +8,8 @@ C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsServi
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.csprojResolveAssemblyReference.cache
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.dll
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.pdb
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerModel\bin\Debug\ServerModel.dll
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerModel\bin\Debug\ServerModel.pdb
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.csprojResolveAssemblyReference.cache
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.dll
+C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.pdb
