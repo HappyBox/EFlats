@@ -14,6 +14,7 @@ namespace WcfEFlatsService
         private readonly object LockObject = new object();
         private static ServerController.CtrLandlord ctrLandlordObj;
         private static ServerController.CtrStudent ctrStudentObj;
+        private static ServerController.CtrLogin ctrLoginObj;
 
         public bool AddStudent(string email, string password, bool confirmed, bool student,
             int score, int numberOfChildren, bool pet, int numberOfCohabiters, bool disabled, DateTime dateOfCreation,
@@ -68,9 +69,9 @@ namespace WcfEFlatsService
             }
         }
 
-        public bool LoginStudent(string email, string password)
+        public bool Login(string email, string password)
         {
-            ctrStudentObj = new ServerController.CtrStudent();
+            ctrLoginObj = new ServerController.CtrLogin();
 
             lock (LockObject)
             {
@@ -78,14 +79,9 @@ namespace WcfEFlatsService
                 Console.WriteLine();
                 Console.WriteLine("LoginStudent() executed by Thread: {0}, at: {1}",
                      Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
-            }
-            //CALL CTR
-            return false;
-        }
 
-        public bool LoginLandlord(string email, string password)
-        {
-            return false;
+                return ctrLoginObj.Login(email, password);
+            }
         }
     }
 }

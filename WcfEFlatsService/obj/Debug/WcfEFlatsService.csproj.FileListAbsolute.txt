@@ -34,3 +34,15 @@ C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\bin\
 C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\obj\Debug\WcfEFlatsService.csprojResolveAssemblyReference.cache
 C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\obj\Debug\WcfEFlatsService.dll
 C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\WcfEFlatsService\obj\Debug\WcfEFlatsService.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\WcfEFlatsService\obj\Debug\WcfEFlatsService.csprojResolveAssemblyReference.cache
+C:\Users\Karolis\Documents\GitHub\EFlats\WcfEFlatsService\obj\Debug\WcfEFlatsService.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\WcfEFlatsService\obj\Debug\WcfEFlatsService.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\WcfEFlatsService\bin\Debug\WcfEFlatsService.dll.config
+C:\Users\Karolis\Documents\GitHub\EFlats\WcfEFlatsService\bin\Debug\WcfEFlatsService.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\WcfEFlatsService\bin\Debug\WcfEFlatsService.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\WcfEFlatsService\bin\Debug\ServerController.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\WcfEFlatsService\bin\Debug\ServerModel.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\WcfEFlatsService\bin\Debug\ServerDatabase.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\WcfEFlatsService\bin\Debug\ServerController.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\WcfEFlatsService\bin\Debug\ServerModel.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\WcfEFlatsService\bin\Debug\ServerDatabase.pdb

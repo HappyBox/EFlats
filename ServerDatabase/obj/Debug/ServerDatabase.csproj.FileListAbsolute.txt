@@ -19,3 +19,10 @@ C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerDatabase\bin\De
 C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerDatabase\obj\Debug\ServerDatabase.csprojResolveAssemblyReference.cache
 C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerDatabase\obj\Debug\ServerDatabase.dll
 C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerDatabase\obj\Debug\ServerDatabase.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\bin\Debug\ServerDatabase.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\bin\Debug\ServerDatabase.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\bin\Debug\ServerModel.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\bin\Debug\ServerModel.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\obj\Debug\ServerDatabase.csprojResolveAssemblyReference.cache
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\obj\Debug\ServerDatabase.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\obj\Debug\ServerDatabase.pdb

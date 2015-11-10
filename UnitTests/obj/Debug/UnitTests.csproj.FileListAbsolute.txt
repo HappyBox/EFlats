@@ -42,3 +42,15 @@ C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\UnitTests\bin\Debug\S
 C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
 C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\UnitTests\obj\Debug\UnitTests.dll
 C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\UnitTests\bin\Debug\ServerController.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\UnitTests\bin\Debug\ServerDatabase.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\UnitTests\bin\Debug\ServerModel.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\UnitTests\bin\Debug\ServerController.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\UnitTests\bin\Debug\ServerDatabase.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\UnitTests\bin\Debug\ServerModel.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Karolis\Documents\GitHub\EFlats\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\UnitTests\obj\Debug\UnitTests.pdb

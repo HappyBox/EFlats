@@ -28,6 +28,13 @@ namespace ServerModel
         private string _country;
         private string _phone;
 
+        //login constructor
+        public MdlLandlord(string email, string password)
+        {
+            _email = email;
+            _password = password;
+        }
+
         //full constructor
         public MdlLandlord(int id, string email, string password, bool confirmed, DateTime dateOfCreation,
                 string name, string surname, string address, string postCode, string city, string country, string phone)

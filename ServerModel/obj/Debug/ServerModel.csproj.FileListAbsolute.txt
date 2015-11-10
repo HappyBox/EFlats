@@ -13,3 +13,8 @@ C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerModel\bin\Debug
 C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.csprojResolveAssemblyReference.cache
 C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.dll
 C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerModel\obj\Debug\ServerModel.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerModel\bin\Debug\ServerModel.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerModel\bin\Debug\ServerModel.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerModel\obj\Debug\ServerModel.csprojResolveAssemblyReference.cache
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerModel\obj\Debug\ServerModel.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerModel\obj\Debug\ServerModel.pdb
