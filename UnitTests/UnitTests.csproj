@@ -54,9 +54,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="testCtrStudent.cs" />
-    <Compile Include="testCtrLandlord.cs" />
-    <Compile Include="testDBCheckEmailExists.cs" />
+    <Compile Include="LoginTests.cs" />
+    <Compile Include="RegistrationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +66,10 @@
     <ProjectReference Include="..\ServerDatabase\ServerDatabase.csproj">
       <Project>{4c47de7b-879e-4023-acc9-2fc7b1435182}</Project>
       <Name>ServerDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerModel\ServerModel.csproj">
+      <Project>{e940a43a-3b97-422a-812b-fc65cf3ac7d2}</Project>
+      <Name>ServerModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

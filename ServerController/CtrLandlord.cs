@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
-using ServerDatabase;
-using ServerModel;
 
 namespace ServerController
 {
@@ -19,35 +18,29 @@ namespace ServerController
             ServerDatabase.DbLandlord dbLandlordObj = new ServerDatabase.DbLandlord();
             ServerDatabase.DbCheckEmailExists dbCheckEmailObj = new ServerDatabase.DbCheckEmailExists();
 
-            //if (dbCheckEmailObj.checkEmailExists(mdlLandlordObj.Email))
+            //if email does not exist register
+            if (!dbCheckEmailObj.checkEmailExists(mdlLandlordObj.Email))
                 return dbLandlordObj.AddLandlord(mdlLandlordObj);
 
+            Console.WriteLine("Registration has failed due to the existing email");
+            Console.WriteLine("Thread: " + Thread.CurrentThread.ManagedThreadId.ToString() + " Time: " + DateTime.Now.ToString());
+            return false;
         }
-            // int flatID
-        public bool AddApartment(int landlordId, int type, string address, int zipCode, int rentPrice, int deposit, DateTime avaiable, DateTime dateFormCreation)
+
+        public bool AddApartment(string landlordEmail, string type, string address, string zipCode, 
+            double rentPrice, double deposit, DateTime avaiable, DateTime dateFormCreation)
         {
-            bool dbFeedback = false;
-            switch (type)
-            {
-                //room
-                case 1:
-                    Console.WriteLine("Wrong type of flat: " + type);
-                    break;
-                //flat
-                case 2:
-                    DbFlat dbFlatObj = new DbFlat();
-                    MdlFlat mdlFlat = new MdlFlat(landlordId, type, dateFormCreation, avaiable, rentPrice, deposit, address, zipCode);
-                    dbFeedback = dbFlatObj.Add(mdlFlat);
-                    break;
-                //house
-                case 3:
-                    Console.WriteLine("Wrong type of flat: " + type);
-                    break;
-                default:
-                    Console.WriteLine("Wrong type of flat: " + type);
-                    break;
-            }
-            return dbFeedback;
+            ServerDatabase.DbFlat dbFlatObj = new ServerDatabase.DbFlat();
+            ServerDatabase.DbCheckEmailExists dcCheckEmailObj = new ServerDatabase.DbCheckEmailExists();
+            ServerModel.MdlFlat mdlFlat = new ServerModel.MdlFlat(landlordEmail, type, dateFormCreation, avaiable, 
+                rentPrice, deposit, address, zipCode);
+            //if email exists add flat
+            if(dcCheckEmailObj.checkLandlordEmailExists(landlordEmail))
+                return dbFlatObj.Add(mdlFlat);
+
+            Console.WriteLine("Unable to add a flat due to non existing landlord email");
+            Console.WriteLine("Thread: " + Thread.CurrentThread.ManagedThreadId.ToString() + " Time: " + DateTime.Now.ToString());
+            return false;
         }
     }
 }

@@ -10,9 +10,3 @@ C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsServi
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ConsoleClient\bin\Debug\ConsoleClient.exe
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ConsoleClient\bin\Debug\ConsoleClient.pdb
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache
-C:\Users\Karolis\Downloads\WcfEFlatsService\ConsoleClient\bin\Debug\ConsoleClient.exe.config
-C:\Users\Karolis\Downloads\WcfEFlatsService\ConsoleClient\obj\Debug\ConsoleClient.exe
-C:\Users\Karolis\Downloads\WcfEFlatsService\ConsoleClient\obj\Debug\ConsoleClient.pdb
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ConsoleClient\bin\Debug\ConsoleClient.exe.config
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ConsoleClient\obj\Debug\ConsoleClient.exe
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ConsoleClient\obj\Debug\ConsoleClient.pdb

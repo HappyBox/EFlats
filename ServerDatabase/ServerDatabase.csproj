@@ -46,8 +46,8 @@
   <ItemGroup>
     <Compile Include="DbCheckEmailExists.cs" />
     <Compile Include="DbConnection.cs" />
-    <Compile Include="DbLandlord.cs" />
     <Compile Include="DbFlat.cs" />
+    <Compile Include="DbLandlord.cs" />
     <Compile Include="DbLogin.cs" />
     <Compile Include="DbStudent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

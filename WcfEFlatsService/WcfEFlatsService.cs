@@ -53,7 +53,22 @@ namespace WcfEFlatsService
             }
         }
 
-        public bool AddApartment(int landlordId, int type, string address, int zipCode, int rentPrice, int deposit, DateTime avaiable, DateTime dateFormCreation)
+        public bool Login(string email, string password)
+        {
+             ctrLoginObj = new ServerController.CtrLogin();
+
+            lock (LockObject)
+            {
+
+                Console.WriteLine();
+                Console.WriteLine("LoginStudent() executed by Thread: {0}, at: {1}",
+                     Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
+
+                return ctrLoginObj.Login(email, password);
+            }
+        }
+
+        public bool AddApartment(string landlordEmail, string type, string address, string zipCode, double rentPrice, double deposit, DateTime avaiable, DateTime dateFormCreation)
         {
             ctrLandlordObj = new ServerController.CtrLandlord();
 
@@ -64,23 +79,8 @@ namespace WcfEFlatsService
                 Console.WriteLine("AddApartment() executed by Thread: {0}, at: {1}",
                      Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
 
-                //call add student method
-                return ctrLandlordObj.AddApartment(landlordId, type, address, zipCode, rentPrice, deposit, avaiable, dateFormCreation);
-            }
-        }
-
-        public bool Login(string email, string password)
-        {
-            ctrLoginObj = new ServerController.CtrLogin();
-
-            lock (LockObject)
-            {
-
-                Console.WriteLine();
-                Console.WriteLine("LoginStudent() executed by Thread: {0}, at: {1}",
-                     Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
-
-                return ctrLoginObj.Login(email, password);
+                //call add appartment method
+                return ctrLandlordObj.AddApartment(landlordEmail, type, address, zipCode, rentPrice, deposit, avaiable, dateFormCreation);
             }
         }
     }

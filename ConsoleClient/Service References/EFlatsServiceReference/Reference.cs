@@ -60,6 +60,18 @@ namespace ConsoleClient.EFlatsServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/AddLandlord", ReplyAction="http://tempuri.org/IWcfEFlatsService/AddLandlordResponse")]
         System.Threading.Tasks.Task<bool> AddLandlordAsync(string email, string password, bool confirmed, System.DateTime dateOfCreation, string name, string surname, string address, string postCode, string city, string country, string phone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/Login", ReplyAction="http://tempuri.org/IWcfEFlatsService/LoginResponse")]
+        bool Login(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/Login", ReplyAction="http://tempuri.org/IWcfEFlatsService/LoginResponse")]
+        System.Threading.Tasks.Task<bool> LoginAsync(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/AddApartment", ReplyAction="http://tempuri.org/IWcfEFlatsService/AddApartmentResponse")]
+        bool AddApartment(string landlordEmail, string type, string address, string zipCode, double rentPrice, double deposit, System.DateTime avaiable, System.DateTime dateFormCreation);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/AddApartment", ReplyAction="http://tempuri.org/IWcfEFlatsService/AddApartmentResponse")]
+        System.Threading.Tasks.Task<bool> AddApartmentAsync(string landlordEmail, string type, string address, string zipCode, double rentPrice, double deposit, System.DateTime avaiable, System.DateTime dateFormCreation);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -137,6 +149,22 @@ namespace ConsoleClient.EFlatsServiceReference {
         
         public System.Threading.Tasks.Task<bool> AddLandlordAsync(string email, string password, bool confirmed, System.DateTime dateOfCreation, string name, string surname, string address, string postCode, string city, string country, string phone) {
             return base.Channel.AddLandlordAsync(email, password, confirmed, dateOfCreation, name, surname, address, postCode, city, country, phone);
+        }
+        
+        public bool Login(string email, string password) {
+            return base.Channel.Login(email, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> LoginAsync(string email, string password) {
+            return base.Channel.LoginAsync(email, password);
+        }
+        
+        public bool AddApartment(string landlordEmail, string type, string address, string zipCode, double rentPrice, double deposit, System.DateTime avaiable, System.DateTime dateFormCreation) {
+            return base.Channel.AddApartment(landlordEmail, type, address, zipCode, rentPrice, deposit, avaiable, dateFormCreation);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddApartmentAsync(string landlordEmail, string type, string address, string zipCode, double rentPrice, double deposit, System.DateTime avaiable, System.DateTime dateFormCreation) {
+            return base.Channel.AddApartmentAsync(landlordEmail, type, address, zipCode, rentPrice, deposit, avaiable, dateFormCreation);
         }
     }
 }

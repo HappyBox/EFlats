@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
-using System.Data.SqlClient;
+using System.Threading.Tasks;
 using ServerModel;
 
 namespace ServerDatabase
@@ -15,11 +14,11 @@ namespace ServerDatabase
         {
             try
             {
-                string query = "insert into Flats values ("
-                    + dbFlatObj.LandlordId + ","
-                    + dbFlatObj.Type + ",'"
+                string query = "insert into Flat_Main values ('"
+                    + dbFlatObj.LandlordEmail + "','"
+                    + dbFlatObj.Type + "','"
+                    + dbFlatObj.PostCode + "','"
                     + dbFlatObj.Address + "',"
-                    + dbFlatObj.PostCode + ","
                     + dbFlatObj.RentPrice + ","
                     + dbFlatObj.Deposit + ",'"
                     + dbFlatObj.Avaiable + "','"

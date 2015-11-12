@@ -26,31 +26,3 @@ C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsServi
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerHost\obj\Debug\ServerHost.csprojResolveAssemblyReference.cache
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerHost\obj\Debug\ServerHost.exe
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerHost\obj\Debug\ServerHost.pdb
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\bin\Debug\ServerHost.exe.config
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\bin\Debug\ServerHost.exe
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\bin\Debug\ServerHost.pdb
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\bin\Debug\WcfEFlatsService.dll
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\bin\Debug\ServerController.dll
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\bin\Debug\ServerModel.dll
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\bin\Debug\ServerDatabase.dll
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\bin\Debug\WcfEFlatsService.pdb
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\bin\Debug\ServerController.pdb
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\bin\Debug\ServerModel.pdb
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\bin\Debug\ServerDatabase.pdb
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\obj\Debug\ServerHost.csprojResolveAssemblyReference.cache
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\obj\Debug\ServerHost.exe
-C:\Users\Karolis\Downloads\ver0.5 + tests\WcfEFlatsService\ServerHost\obj\Debug\ServerHost.pdb
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\bin\Debug\ServerHost.exe.config
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\bin\Debug\ServerHost.exe
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\bin\Debug\ServerHost.pdb
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\bin\Debug\WcfEFlatsService.dll
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\bin\Debug\ServerController.dll
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\bin\Debug\ServerModel.dll
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\bin\Debug\ServerDatabase.dll
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\bin\Debug\WcfEFlatsService.pdb
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\bin\Debug\ServerController.pdb
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\bin\Debug\ServerModel.pdb
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\bin\Debug\ServerDatabase.pdb
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\obj\Debug\ServerHost.csprojResolveAssemblyReference.cache
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\obj\Debug\ServerHost.exe
-C:\Users\Karolis\Documents\GitHub\EFlats\ServerHost\obj\Debug\ServerHost.pdb

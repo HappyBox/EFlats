@@ -17,6 +17,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "ConsoleClient\ConsoleClient.csproj", "{F8D4FA9D-44DD-45E1-A517-BC30F9B7178F}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebsiteFlats(1)", "..\..\webSites\ver0.2\WebsiteFlats", "{AD041B21-FFEC-4288-B337-ABDFD1360061}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_65190"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\webSites\ver0.2\WebsiteFlats\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65190\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_65190"
+		Release.AspNetCompiler.PhysicalPath = "..\..\webSites\ver0.2\WebsiteFlats\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65190\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "65190"
+		SlnRelativePath = "..\..\webSites\ver0.2\WebsiteFlats\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,35 +72,12 @@ Global
 		{F8D4FA9D-44DD-45E1-A517-BC30F9B7178F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8D4FA9D-44DD-45E1-A517-BC30F9B7178F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8D4FA9D-44DD-45E1-A517-BC30F9B7178F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD041B21-FFEC-4288-B337-ABDFD1360061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD041B21-FFEC-4288-B337-ABDFD1360061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD041B21-FFEC-4288-B337-ABDFD1360061}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD041B21-FFEC-4288-B337-ABDFD1360061}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 8
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://infamous5project.visualstudio.com/defaultcollection
-		SccProjectUniqueName0 = WcfEFlatsService\\WcfEFlatsService.csproj
-		SccProjectName0 = WcfEFlatsService
-		SccLocalPath0 = WcfEFlatsService
-		SccLocalPath1 = .
-		SccProjectUniqueName2 = ServerController\\ServerController.csproj
-		SccProjectName2 = ServerController
-		SccLocalPath2 = ServerController
-		SccProjectUniqueName3 = ServerModel\\ServerModel.csproj
-		SccProjectName3 = ServerModel
-		SccLocalPath3 = ServerModel
-		SccProjectUniqueName4 = ServerDatabase\\ServerDatabase.csproj
-		SccProjectName4 = ServerDatabase
-		SccLocalPath4 = ServerDatabase
-		SccProjectUniqueName5 = ServerHost\\ServerHost.csproj
-		SccProjectName5 = ServerHost
-		SccLocalPath5 = ServerHost
-		SccProjectUniqueName6 = UnitTests\\UnitTests.csproj
-		SccProjectName6 = UnitTests
-		SccLocalPath6 = UnitTests
-		SccProjectUniqueName7 = ConsoleClient\\ConsoleClient.csproj
-		SccProjectName7 = ConsoleClient
-		SccLocalPath7 = ConsoleClient
 	EndGlobalSection
 EndGlobal

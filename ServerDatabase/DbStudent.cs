@@ -15,6 +15,7 @@ namespace ServerDatabase
         {
             try
             {
+                DbConnection.Open();
                 DbStudent.CreateCommandMain(studentObj).ExecuteNonQuery();
                 SetLastId(studentObj);
 
@@ -22,6 +23,7 @@ namespace ServerDatabase
                 DbStudent.CreateCommandPersonal(studentObj).ExecuteNonQuery();
 
                 DbConnection.Close();
+                Console.WriteLine("REGISTRATION : true");
                 return true;
             }
             catch (Exception e)
@@ -38,8 +40,11 @@ namespace ServerDatabase
             string query = "Select ID from ST_Main where email = '" + studentObj.Email + "'";
             SqlCommand sqlCommand = new SqlCommand(query, DbConnection.dbconn);
             SqlDataReader sqlReader = sqlCommand.ExecuteReader();
-            sqlReader.Read();
-            studentObj.Id = Convert.ToInt32(sqlReader.GetValue(0));
+            while (sqlReader.Read())
+            {
+                studentObj.Id = Convert.ToInt32(sqlReader.GetValue(0));
+            }
+
             sqlReader.Close();
         }
 

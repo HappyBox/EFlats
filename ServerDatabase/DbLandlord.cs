@@ -49,7 +49,7 @@ namespace ServerDatabase
                 + landlordObj.Password + "',"
                 + Convert.ToInt32(landlordObj.Confirmed) + ")";
 
-            Console.Write("Thread " + Thread.CurrentThread.ManagedThreadId.ToString() + " Executed query: \n     " + query);
+            Console.Write("\n\nThread " + Thread.CurrentThread.ManagedThreadId.ToString() + " Executed query: \n     " + query);
 
             //return SQLCommand
             return DbConnection.GetDbCommand(query);
@@ -64,7 +64,7 @@ namespace ServerDatabase
                 + landlordObj.Id + ",'"
                 + sqlFormattedDate + "')";
 
-            Console.Write("Thread " + Thread.CurrentThread.ManagedThreadId.ToString() + " Executed query: \n     " + query);
+            Console.Write("\n\nThread " + Thread.CurrentThread.ManagedThreadId.ToString() + " Executed query: \n     " + query);
 
             //return SQLCommand
             return DbConnection.GetDbCommand(query);
@@ -82,14 +82,10 @@ namespace ServerDatabase
                 + landlordObj.Country + "','"
                 + landlordObj.Phone + "')";
 
-            Console.Write("Thread " + Thread.CurrentThread.ManagedThreadId.ToString() + " Executed query: \n     " + query);
+            Console.Write("\n\nThread " + Thread.CurrentThread.ManagedThreadId.ToString() + " Executed query: \n     " + query);
 
             //return SQLCommand
             return DbConnection.GetDbCommand(query);
-        }
-        public bool AddApartment()
-        {
-            return false;
         }
     }
 }

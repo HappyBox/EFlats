@@ -12,35 +12,65 @@ namespace ServerDatabase
     {
         public bool checkEmailExists(string email)
         {
-            return (checkLandlordEmailExists(email) || checkStudentEmailExists(email));
+            return checkEmailExistsDBCall(email);
         }
 
-        private bool checkStudentEmailExists(string email)
+        public bool checkLandlordEmailExists(string email)
         {
-            string query = "Select * from ST_Main where Email='" + email + "'";
+            string queryLandlord = "Select Email from LD_Main where Email='" + email + "'";
+            string sqlEmailLandlord = "";
+            SqlCommand sqlCommand;
+            SqlDataReader sqlReader;
 
-            SqlCommand sqlCommand = new SqlCommand(query, DbConnection.dbconn);
-            SqlDataReader sqlReader = sqlCommand.ExecuteReader();
+            DbConnection.Open();
+            sqlCommand = new SqlCommand(queryLandlord, DbConnection.dbconn);
+            sqlReader = sqlCommand.ExecuteReader();
 
-            sqlReader.Read();
-            string sqlEmail = sqlReader.GetValue(1).ToString().Trim();
-            if(email == sqlEmail)
+            while (sqlReader.Read())
             {
-                return true;
+                sqlEmailLandlord = sqlReader.GetValue(0).ToString().Trim();
             }
+
+            sqlReader.Close();
+            DbConnection.Close();
+
+            if (email.Equals(sqlEmailLandlord))
+                return true;
+
             return false;
         }
 
-        private bool checkLandlordEmailExists(string email)
+        private bool checkEmailExistsDBCall(string email)
         {
-            string query = "Select * from LD_Main where Email='" + email + "'";
+            string queryStudent = "Select Email from ST_Main where Email='" + email + "'";
+            string queryLandlord = "Select Email from LD_Main where Email='" + email + "'";
+            string sqlEmailStudent = "";
+            string sqlEmailLandlord = "";
+            SqlCommand sqlCommand;
+            SqlDataReader sqlReader;
 
-            SqlCommand sqlCommand = new SqlCommand(query, DbConnection.dbconn);
-            SqlDataReader sqlReader = sqlCommand.ExecuteReader();
+            DbConnection.Open();
+            sqlCommand = new SqlCommand(queryStudent, DbConnection.dbconn);
+            sqlReader = sqlCommand.ExecuteReader();
 
-            sqlReader.Read();
-            string sqlEmail = sqlReader.GetValue(1).ToString().Trim();
-            if (email == sqlEmail)
+            while (sqlReader.Read())
+            {
+                sqlEmailStudent = sqlReader.GetValue(0).ToString().Trim();
+            }
+            sqlReader.Close();            
+
+            sqlCommand = new SqlCommand(queryLandlord, DbConnection.dbconn);
+            sqlReader = sqlCommand.ExecuteReader();
+
+            while (sqlReader.Read())
+            {
+                sqlEmailLandlord = sqlReader.GetValue(0).ToString().Trim();
+            }
+
+            sqlReader.Close();
+            DbConnection.Close();
+
+            if (email.Equals(sqlEmailStudent) || email.Equals(sqlEmailLandlord))
             {
                 return true;
             }

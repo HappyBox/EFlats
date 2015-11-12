@@ -10,11 +10,8 @@ namespace ServerController
     {
         public bool Login(string email, string password)
         {
-            ServerModel.MdlStudent mdlStudentObj = new ServerModel.MdlStudent(email, password);
-            ServerModel.MdlLandlord mdlLandlordObj = new ServerModel.MdlLandlord(email, password);
             ServerDatabase.DbLogin dbLoginObj = new ServerDatabase.DbLogin();
-
-            return dbLoginObj.LoginStudent(mdlStudentObj, mdlLandlordObj);
+            return dbLoginObj.Login(email, password);
         }
     }
 }

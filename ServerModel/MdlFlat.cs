@@ -12,21 +12,20 @@ namespace ServerModel
     {
         //main attributes
         private int _id;
-        private int _landlordId;
-        private int _type;
-        private string _email;
+        private string _landlordEmail;
+        private string _type;
         private DateTime _dateFormCreation;
         private DateTime _avaiable;
         private string _address;
-        private int _rentPrice;
-        private int _deposit;
-        private int _postCode;
+        private double _rentPrice;
+        private double _deposit;
+        private string _postCode;
 
         //full constructor
-        public MdlFlat(int landlordId, int type, DateTime dateFormCreation, DateTime avaiable, int rentPrice, int deposit, string address, int postCode)
+        public MdlFlat(string landlordEmail, string type, DateTime dateFormCreation, DateTime avaiable, double rentPrice, double deposit, string address, string postCode)
         {
             //_email = email;
-            _landlordId = landlordId;
+            _landlordEmail = landlordEmail;
             _type = type;
             _dateFormCreation = dateFormCreation;
             _avaiable = avaiable;
@@ -42,21 +41,16 @@ namespace ServerModel
             get { return _id; }
             set { _id = value; }
         }
-        [DataMember(Name = "LandlordID", Order = 2)]
-        public int LandlordId
+
+        [DataMember(Name = "Landlord_Email", Order = 2)]
+        public string LandlordEmail
         {
-            get { return _id; }
-            set { _id = value; }
-        }
-        [DataMember(Name = "Email", Order = 3)]
-        public string Email
-        {
-            get { return _email; }
-            set { _email = value; }
+            get { return _landlordEmail; }
+            set { _landlordEmail = value; }
         }
 
         [DataMember(Order = 4)]
-        public int Type
+        public string Type
         {
             get { return _type; }
             set { _type = value; }
@@ -77,14 +71,14 @@ namespace ServerModel
         }
 
         [DataMember(Order = 7)]
-        public int RentPrice
+        public double RentPrice
         {
             get { return _rentPrice; }
             set { _rentPrice = value; }
         }
 
         [DataMember(Order = 8)]
-        public int Deposit
+        public double Deposit
         {
             get { return _deposit; }
             set { _deposit = value; }
@@ -98,7 +92,7 @@ namespace ServerModel
         }
 
         [DataMember(Order = 10)]
-        public int PostCode
+        public string PostCode
         {
             get { return _postCode; }
             set { _postCode = value; }
