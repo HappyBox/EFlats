@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Collections;
 
 namespace ConsoleClient
 {
@@ -67,6 +68,15 @@ namespace ConsoleClient
             bool loginStudentIncorrectPassTest = false;
             loginStudentIncorrectPassTest = client.Login("miropakanec@gmail.com", "mypasswordIncorrect");
             Console.WriteLine("login student (fail pass) | result: " + loginStudentIncorrectPassTest.ToString());
+
+            //get data from existing user
+            object[] list = new object[30];
+            client.GetData("default2@default.com").CopyTo(list, 0);
+
+            for (int i = 0; i < list.Length; i++)
+            {
+                Console.WriteLine(list[i]);
+            }
 
             Console.ReadLine();
         }

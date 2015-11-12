@@ -72,6 +72,13 @@ namespace ConsoleClient.EFlatsServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/AddApartment", ReplyAction="http://tempuri.org/IWcfEFlatsService/AddApartmentResponse")]
         System.Threading.Tasks.Task<bool> AddApartmentAsync(string landlordEmail, string type, string address, string zipCode, double rentPrice, double deposit, System.DateTime avaiable, System.DateTime dateFormCreation);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/GetData", ReplyAction="http://tempuri.org/IWcfEFlatsService/GetDataResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(object[]))]
+        object[] GetData(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/GetData", ReplyAction="http://tempuri.org/IWcfEFlatsService/GetDataResponse")]
+        System.Threading.Tasks.Task<object[]> GetDataAsync(string email);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -165,6 +172,14 @@ namespace ConsoleClient.EFlatsServiceReference {
         
         public System.Threading.Tasks.Task<bool> AddApartmentAsync(string landlordEmail, string type, string address, string zipCode, double rentPrice, double deposit, System.DateTime avaiable, System.DateTime dateFormCreation) {
             return base.Channel.AddApartmentAsync(landlordEmail, type, address, zipCode, rentPrice, deposit, avaiable, dateFormCreation);
+        }
+        
+        public object[] GetData(string email) {
+            return base.Channel.GetData(email);
+        }
+        
+        public System.Threading.Tasks.Task<object[]> GetDataAsync(string email) {
+            return base.Channel.GetDataAsync(email);
         }
     }
 }

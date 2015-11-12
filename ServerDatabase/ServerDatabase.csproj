@@ -47,6 +47,7 @@
     <Compile Include="DbCheckEmailExists.cs" />
     <Compile Include="DbConnection.cs" />
     <Compile Include="DbFlat.cs" />
+    <Compile Include="DbGetData.cs" />
     <Compile Include="DbLandlord.cs" />
     <Compile Include="DbLogin.cs" />
     <Compile Include="DbStudent.cs" />

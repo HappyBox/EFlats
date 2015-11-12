@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Threading;
+using System.Collections;
 
 namespace WcfEFlatsService
 {
@@ -15,6 +16,7 @@ namespace WcfEFlatsService
         private static ServerController.CtrLandlord ctrLandlordObj;
         private static ServerController.CtrStudent ctrStudentObj;
         private static ServerController.CtrLogin ctrLoginObj;
+        private static ServerController.CtrGetData ctrGetDataObj;
 
         public bool AddStudent(string email, string password, bool confirmed, bool student,
             int score, int numberOfChildren, bool pet, int numberOfCohabiters, bool disabled, DateTime dateOfCreation,
@@ -82,6 +84,17 @@ namespace WcfEFlatsService
                 //call add appartment method
                 return ctrLandlordObj.AddApartment(landlordEmail, type, address, zipCode, rentPrice, deposit, avaiable, dateFormCreation);
             }
+        }
+
+        public ArrayList GetData(string email)
+        {
+            ctrGetDataObj = new ServerController.CtrGetData();
+
+            Console.WriteLine();
+            Console.WriteLine("GetData() executed by Thread: {0}, at: {1}",
+                 Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
+
+            return ctrGetDataObj.GetUserData(email);
         }
     }
 }

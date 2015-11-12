@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.Collections;
 using System.Text;
 
 namespace WcfEFlatsService
@@ -25,5 +26,7 @@ namespace WcfEFlatsService
         [OperationContract]
         bool AddApartment(string landlordEmail, string type, string address, string zipCode, double rentPrice, double deposit, DateTime avaiable, DateTime dateFormCreation);
 
+        [OperationContract]
+        ArrayList GetData(string email);
     }
 }

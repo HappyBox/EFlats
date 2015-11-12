@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CtrGetData.cs" />
     <Compile Include="CtrLandlord.cs" />
     <Compile Include="CtrLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

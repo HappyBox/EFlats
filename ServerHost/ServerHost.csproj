@@ -55,6 +55,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ServerController\ServerController.csproj">
+      <Project>{24759ab0-833b-4560-aa77-45d5dee8bdf0}</Project>
+      <Name>ServerController</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WcfEFlatsService\WcfEFlatsService.csproj">
       <Project>{ce8aa248-7e6e-4e3f-bdf9-3a82e461286a}</Project>
       <Name>WcfEFlatsService</Name>
