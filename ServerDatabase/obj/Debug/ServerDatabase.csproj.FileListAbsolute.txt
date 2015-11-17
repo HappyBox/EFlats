@@ -12,3 +12,10 @@ C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsServi
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerDatabase\obj\Debug\ServerDatabase.csprojResolveAssemblyReference.cache
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerDatabase\obj\Debug\ServerDatabase.dll
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerDatabase\obj\Debug\ServerDatabase.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\bin\Debug\ServerDatabase.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\bin\Debug\ServerDatabase.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\bin\Debug\ServerModel.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\bin\Debug\ServerModel.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\obj\Debug\ServerDatabase.csprojResolveAssemblyReference.cache
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\obj\Debug\ServerDatabase.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerDatabase\obj\Debug\ServerDatabase.pdb
