@@ -28,5 +28,19 @@ namespace WcfEFlatsService
 
         [OperationContract]
         ArrayList GetData(string email);
+
+        [OperationContract]
+        bool AddToWishlist(int studentId, int flatId);
+
+        [OperationContract]
+        bool RemoveFromWishlist(int studentId, int FlatId);
+
+        [OperationContract]
+        int CalculateProfileScore(int id);
+
+        //[OperationContract]
+        //int CalculateApplicationScore(int studentId, string studentEmail, int flatId);
+
+
     }
 }

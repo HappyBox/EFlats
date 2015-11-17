@@ -37,6 +37,30 @@
   <wsdl:message name="IWcfEFlatsService_GetData_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDataResponse" />
   </wsdl:message>
+  <wsdl:message name="IWcfEFlatsService_AddToWishlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToWishlist" />
+  </wsdl:message>
+  <wsdl:message name="IWcfEFlatsService_AddToWishlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToWishlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfEFlatsService_RemoveFromWishlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromWishlist" />
+  </wsdl:message>
+  <wsdl:message name="IWcfEFlatsService_RemoveFromWishlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromWishlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfEFlatsService_CalculateProfileScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateProfileScore" />
+  </wsdl:message>
+  <wsdl:message name="IWcfEFlatsService_CalculateProfileScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateProfileScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWcfEFlatsService_CalculateApplicationScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateApplicationScore" />
+  </wsdl:message>
+  <wsdl:message name="IWcfEFlatsService_CalculateApplicationScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateApplicationScoreResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWcfEFlatsService">
     <wsdl:operation name="AddStudent">
       <wsdl:input wsaw:Action="http://tempuri.org/IWcfEFlatsService/AddStudent" message="tns:IWcfEFlatsService_AddStudent_InputMessage" />
@@ -57,6 +81,22 @@
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IWcfEFlatsService/GetData" message="tns:IWcfEFlatsService_GetData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWcfEFlatsService/GetDataResponse" message="tns:IWcfEFlatsService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToWishlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfEFlatsService/AddToWishlist" message="tns:IWcfEFlatsService_AddToWishlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfEFlatsService/AddToWishlistResponse" message="tns:IWcfEFlatsService_AddToWishlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromWishlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfEFlatsService/RemoveFromWishlist" message="tns:IWcfEFlatsService_RemoveFromWishlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfEFlatsService/RemoveFromWishlistResponse" message="tns:IWcfEFlatsService_RemoveFromWishlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateProfileScore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfEFlatsService/CalculateProfileScore" message="tns:IWcfEFlatsService_CalculateProfileScore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfEFlatsService/CalculateProfileScoreResponse" message="tns:IWcfEFlatsService_CalculateProfileScore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateApplicationScore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWcfEFlatsService/CalculateApplicationScore" message="tns:IWcfEFlatsService_CalculateApplicationScore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWcfEFlatsService/CalculateApplicationScoreResponse" message="tns:IWcfEFlatsService_CalculateApplicationScore_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWcfEFlatsService" type="tns:IWcfEFlatsService">
@@ -99,6 +139,42 @@
     </wsdl:operation>
     <wsdl:operation name="GetData">
       <soap:operation soapAction="http://tempuri.org/IWcfEFlatsService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToWishlist">
+      <soap:operation soapAction="http://tempuri.org/IWcfEFlatsService/AddToWishlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromWishlist">
+      <soap:operation soapAction="http://tempuri.org/IWcfEFlatsService/RemoveFromWishlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateProfileScore">
+      <soap:operation soapAction="http://tempuri.org/IWcfEFlatsService/CalculateProfileScore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateApplicationScore">
+      <soap:operation soapAction="http://tempuri.org/IWcfEFlatsService/CalculateApplicationScore" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

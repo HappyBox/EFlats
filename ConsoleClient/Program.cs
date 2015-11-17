@@ -13,7 +13,7 @@ namespace ConsoleClient
         static void Main(string[] args)
         {
             EFlatsServiceReference.WcfEFlatsServiceClient client = new EFlatsServiceReference.WcfEFlatsServiceClient();
-
+/*
             //register (new) Student Test
             bool registerStudentTest = false;
             registerStudentTest = client.AddStudent("miropakanec@gmail.com", "mypassword", false, false, 0, 0, false, 0, false, DateTime.Now, null, null, null, null, null, null, null);
@@ -69,14 +69,74 @@ namespace ConsoleClient
             loginStudentIncorrectPassTest = client.Login("miropakanec@gmail.com", "mypasswordIncorrect");
             Console.WriteLine("login student (fail pass) | result: " + loginStudentIncorrectPassTest.ToString());
 
-            //get data from existing user
-            object[] list = new object[30];
-            client.GetData("default2@default.com").CopyTo(list, 0);
+            //get data from existing user (student)
+            object[] listStudent = new object[18];
+            client.GetData("default2@default.com").CopyTo(listStudent, 0);
+            Console.Write("\n\nFetching student data from database: \n");
+            for (int i = 0; i < listStudent.Length; i++)
+            {
+                Console.Write(listStudent[i] + " ,");
+            }
+            //userData = initialize...(userData)
 
+            //get data from existing user (landlord)
+            object[] listLandlord = new object[18];
+            client.GetData("default3@default.com").CopyTo(listLandlord, 0);
+            Console.Write("\n\nFetching landlord data from database: \n");
+            for (int i = 0; i < listLandlord.Length; i++)
+            {
+                Console.Write(listLandlord[i] + " ,");
+            }
+
+            //get data from nonexisting user
+            object[] list = new object[18];
+            client.GetData("nonExisting@default.com").CopyTo(list, 0);
+            Console.Write("\n\nFetching user data from database: \n");
             for (int i = 0; i < list.Length; i++)
             {
-                Console.WriteLine(list[i]);
+                Console.Write(list[i] + " ,");
             }
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            //CHANGE FLAT ID
+
+            //add to wish list
+            bool AddToWishlist = false;
+            AddToWishlist = client.AddToWishlist(360, "miropakanec@gmail.com", 60);
+            Console.WriteLine("add to wishlist           | result: " + AddToWishlist);
+
+            //add to wishlist existing application
+            bool AddToWishlistExistingApplication = false;
+            AddToWishlistExistingApplication = client.AddToWishlist(360, "miropakanec@gmail.com", 60);
+            Console.WriteLine("add to wishlist (fail APP)| result: " + AddToWishlistExistingApplication);
+
+            //add to wish list non existing student
+            bool AddToWishlistNonExistingStudent = false;
+            AddToWishlistNonExistingStudent = client.AddToWishlist(5000, "miropakanecNonExisting@gmail.com", 60);
+            Console.WriteLine("add to wishlist (fail ST) | result: " + AddToWishlistNonExistingStudent);
+
+            //add to wish list non existing flat
+            bool AddToWishlistNonExistingFlat = false;
+            AddToWishlistNonExistingStudent = client.AddToWishlist(360, "miropakanec@gmail.com", 5000);
+            Console.WriteLine("add to wishlist (fail FL) | result: " + AddToWishlistNonExistingFlat);
+
+            //remove from wish list
+            bool removeFromWishlist = false;
+            removeFromWishlist = client.RemoveFromWishlist(360, 60);
+            Console.WriteLine("remove from wishlist     | result: " + removeFromWishlist);
+
+
+            //calculate score (3, 1, 0)
+            int score = 0;
+            score = client.CalculateProfileScore(500, "default5@default.com");
+            Console.WriteLine("calculate profile score    | result: " + score );
+*/
+            int score = -1;
+            score = client.CalculateApplicationScore(400, "default@default.com", 60);
+            Console.WriteLine("Calculate application score() | result: " + score);
+
 
             Console.ReadLine();
         }

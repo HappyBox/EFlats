@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbApplications.cs" />
     <Compile Include="DbCheckEmailExists.cs" />
     <Compile Include="DbConnection.cs" />
     <Compile Include="DbFlat.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="DbLandlord.cs" />
     <Compile Include="DbLogin.cs" />
     <Compile Include="DbStudent.cs" />
+    <Compile Include="DbUpdate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

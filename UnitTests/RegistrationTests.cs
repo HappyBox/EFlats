@@ -4,8 +4,6 @@ using ServerDatabase;
 using ServerModel;
 using ServerController;
 
-
-
 namespace UnitTests
 {
     [TestClass]

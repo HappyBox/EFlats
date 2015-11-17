@@ -28,8 +28,9 @@ namespace ServerController
             }
             else
             {
+                ArrayList array = new ArrayList();
                 Console.WriteLine("Unable to get Users information.");
-                return null;
+                return array;
             }
 
         }
@@ -71,26 +72,27 @@ namespace ServerController
         {
             ArrayList userData = new ArrayList();
 
-            userData.Add(mdlLandlordObj.Id); //1
-            userData.Add(mdlLandlordObj.Email); //2
+            userData.Add(mdlLandlordObj.Id); //0
+            userData.Add(mdlLandlordObj.Email); //1
             //leave password null
-            userData.Add(""); //3
-            userData.Add(mdlLandlordObj.Confirmed);//4
+            userData.Add(""); //2
+            userData.Add(mdlLandlordObj.Confirmed);//3
+            userData.Add(null);//4
             userData.Add(null);//5
             userData.Add(null);//6
             userData.Add(null);//7
             userData.Add(null);//8
             userData.Add(null);//9
-            userData.Add(null);//10
-            userData.Add(mdlLandlordObj.DateOfCreation);//11
-            userData.Add(mdlLandlordObj.Name);//12
-            userData.Add(mdlLandlordObj.Surname);//13
-            userData.Add(mdlLandlordObj.Address);//14
-            userData.Add(mdlLandlordObj.PostCode);//15
-            userData.Add(mdlLandlordObj.City);//16
-            userData.Add(mdlLandlordObj.Country);//17
-            userData.Add(mdlLandlordObj.Phone);//18
+            userData.Add(mdlLandlordObj.DateOfCreation);//10
+            userData.Add(mdlLandlordObj.Name);//11
+            userData.Add(mdlLandlordObj.Surname);//12
+            userData.Add(mdlLandlordObj.Address);//13
+            userData.Add(mdlLandlordObj.PostCode);//14
+            userData.Add(mdlLandlordObj.City);//15
+            userData.Add(mdlLandlordObj.Country);//16
+            userData.Add(mdlLandlordObj.Phone);//17
 
+            Console.WriteLine("Returning populated arraylist to the client.");
             return userData;
         }
     }

@@ -54,7 +54,7 @@ namespace ServerDatabase
             SqlDataReader sqlReader = sqlCommand.ExecuteReader();
             while (sqlReader.Read())
             {
-                mdlLandlordObj.DateOfCreation = Convert.ToDateTime(sqlReader.GetValue(6).ToString().Trim());
+                mdlLandlordObj.DateOfCreation = Convert.ToDateTime(sqlReader.GetValue(1).ToString().Trim());
             }
 
             sqlReader.Close();

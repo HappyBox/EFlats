@@ -17,6 +17,7 @@ namespace WcfEFlatsService
         private static ServerController.CtrStudent ctrStudentObj;
         private static ServerController.CtrLogin ctrLoginObj;
         private static ServerController.CtrGetData ctrGetDataObj;
+        private static ServerController.CtrApplications ctrApplicationsObj;
 
         public bool AddStudent(string email, string password, bool confirmed, bool student,
             int score, int numberOfChildren, bool pet, int numberOfCohabiters, bool disabled, DateTime dateOfCreation,
@@ -63,7 +64,7 @@ namespace WcfEFlatsService
             {
 
                 Console.WriteLine();
-                Console.WriteLine("LoginStudent() executed by Thread: {0}, at: {1}",
+                Console.WriteLine("Login() executed by Thread: {0}, at: {1}",
                      Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
 
                 return ctrLoginObj.Login(email, password);
@@ -96,5 +97,76 @@ namespace WcfEFlatsService
 
             return ctrGetDataObj.GetUserData(email);
         }
+
+        public bool AddToWishlist(int studentId, int flatId)
+        {
+            ctrStudentObj = new ServerController.CtrStudent();
+            int queueNumber = -2;
+
+            Console.WriteLine();
+            Console.WriteLine("AddToWishlist() executed by Thread: {0}, at: {1}",
+                Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());           
+
+            //critical section (read + write)
+            lock (LockObject)
+            {
+                queueNumber = ctrStudentObj.GetLastQueueNumber(flatId);
+                Console.WriteLine("GetLastQueue() executed by Thread: {0}, at: {1}",
+                    Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
+
+                if (queueNumber > -2)
+                    return ctrStudentObj.AddToWishlist(studentId, flatId, 0, queueNumber + 1);
+
+                Console.WriteLine("FAILED");
+                return false;
+            }
+        }
+
+        public bool RemoveFromWishlist(int studentId, int flatId)
+        {
+            ctrStudentObj = new ServerController.CtrStudent();
+            Console.WriteLine();
+            Console.WriteLine("RemoveFromWishlist() executed by Thread: {0}, at: {1}",
+                Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
+
+            return ctrStudentObj.RemoveFromWishlist(studentId, flatId);
+        }
+
+        public int CalculateProfileScore(int studentId)
+        {
+            ctrStudentObj = new ServerController.CtrStudent();
+            Console.WriteLine();
+            Console.WriteLine("CalculateProfileScore() executed by Thread: {0}, at: {1}",
+                Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
+            return ctrStudentObj.CalculateProfileScore(studentId);
+        } 
+
+       /* public int CalculateApplicationScore(int studentId, int flatId)
+        {
+            ctrStudentObj = new ServerController.CtrStudent();
+            ctrApplicationsObj = new ServerController.CtrApplications();
+            int scoreProfile = -1;
+            int scoreDate = -1;
+
+            Console.WriteLine();
+            Console.WriteLine("CalculateProfileScore() executed by Thread: {0}, at: {1}",
+                Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
+            //using threads to speed things up
+            Thread scoreThread = new Thread(() => { scoreProfile = ctrStudentObj.GetScore(studentId); });
+            Thread numberOfDaysThread = new Thread(() => { scoreDate = ctrApplicationsObj.CalculateScoreDate(studentId, flatId); });
+
+            numberOfDaysThread.Start();
+            Console.WriteLine("CalculateScoreDate() executed by Thread: {0}, at: {1}",
+                numberOfDaysThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
+
+            scoreThread.Start();
+            Console.WriteLine("GetScore() executed by Thread: {0}, at: {1}",
+                scoreThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
+
+            numberOfDaysThread.Join();
+            scoreThread.Join();
+
+            return scoreProfile + scoreDate;
+        }*/
     }
 }

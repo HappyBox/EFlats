@@ -79,6 +79,30 @@ namespace ConsoleClient.EFlatsServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/GetData", ReplyAction="http://tempuri.org/IWcfEFlatsService/GetDataResponse")]
         System.Threading.Tasks.Task<object[]> GetDataAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/AddToWishlist", ReplyAction="http://tempuri.org/IWcfEFlatsService/AddToWishlistResponse")]
+        bool AddToWishlist(int studentId, string studentEmail, int flatId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/AddToWishlist", ReplyAction="http://tempuri.org/IWcfEFlatsService/AddToWishlistResponse")]
+        System.Threading.Tasks.Task<bool> AddToWishlistAsync(int studentId, string studentEmail, int flatId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/RemoveFromWishlist", ReplyAction="http://tempuri.org/IWcfEFlatsService/RemoveFromWishlistResponse")]
+        bool RemoveFromWishlist(int studentId, int FlatId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/RemoveFromWishlist", ReplyAction="http://tempuri.org/IWcfEFlatsService/RemoveFromWishlistResponse")]
+        System.Threading.Tasks.Task<bool> RemoveFromWishlistAsync(int studentId, int FlatId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/CalculateProfileScore", ReplyAction="http://tempuri.org/IWcfEFlatsService/CalculateProfileScoreResponse")]
+        int CalculateProfileScore(int id, string studentEmail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/CalculateProfileScore", ReplyAction="http://tempuri.org/IWcfEFlatsService/CalculateProfileScoreResponse")]
+        System.Threading.Tasks.Task<int> CalculateProfileScoreAsync(int id, string studentEmail);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/CalculateApplicationScore", ReplyAction="http://tempuri.org/IWcfEFlatsService/CalculateApplicationScoreResponse")]
+        int CalculateApplicationScore(int studentId, string studentEmail, int flatId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfEFlatsService/CalculateApplicationScore", ReplyAction="http://tempuri.org/IWcfEFlatsService/CalculateApplicationScoreResponse")]
+        System.Threading.Tasks.Task<int> CalculateApplicationScoreAsync(int studentId, string studentEmail, int flatId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -180,6 +204,38 @@ namespace ConsoleClient.EFlatsServiceReference {
         
         public System.Threading.Tasks.Task<object[]> GetDataAsync(string email) {
             return base.Channel.GetDataAsync(email);
+        }
+        
+        public bool AddToWishlist(int studentId, string studentEmail, int flatId) {
+            return base.Channel.AddToWishlist(studentId, studentEmail, flatId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddToWishlistAsync(int studentId, string studentEmail, int flatId) {
+            return base.Channel.AddToWishlistAsync(studentId, studentEmail, flatId);
+        }
+        
+        public bool RemoveFromWishlist(int studentId, int FlatId) {
+            return base.Channel.RemoveFromWishlist(studentId, FlatId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RemoveFromWishlistAsync(int studentId, int FlatId) {
+            return base.Channel.RemoveFromWishlistAsync(studentId, FlatId);
+        }
+        
+        public int CalculateProfileScore(int id, string studentEmail) {
+            return base.Channel.CalculateProfileScore(id, studentEmail);
+        }
+        
+        public System.Threading.Tasks.Task<int> CalculateProfileScoreAsync(int id, string studentEmail) {
+            return base.Channel.CalculateProfileScoreAsync(id, studentEmail);
+        }
+        
+        public int CalculateApplicationScore(int studentId, string studentEmail, int flatId) {
+            return base.Channel.CalculateApplicationScore(studentId, studentEmail, flatId);
+        }
+        
+        public System.Threading.Tasks.Task<int> CalculateApplicationScoreAsync(int studentId, string studentEmail, int flatId) {
+            return base.Channel.CalculateApplicationScoreAsync(studentId, studentEmail, flatId);
         }
     }
 }
