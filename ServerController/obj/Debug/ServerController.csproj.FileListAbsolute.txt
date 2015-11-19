@@ -16,3 +16,12 @@ C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsServi
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerController\obj\Debug\ServerController.csprojResolveAssemblyReference.cache
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerController\obj\Debug\ServerController.dll
 C:\Users\MPJ\Documents\Visual Studio 2015\Projects\PROJECT\ver0.2\WcfEFlatsService\ServerController\obj\Debug\ServerController.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerController\bin\Debug\ServerController.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerController\bin\Debug\ServerController.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerController\bin\Debug\ServerDatabase.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerController\bin\Debug\ServerModel.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerController\bin\Debug\ServerDatabase.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerController\bin\Debug\ServerModel.pdb
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerController\obj\Debug\ServerController.csprojResolveAssemblyReference.cache
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerController\obj\Debug\ServerController.dll
+C:\Users\Karolis\Documents\GitHub\EFlats\ServerController\obj\Debug\ServerController.pdb

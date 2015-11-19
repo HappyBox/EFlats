@@ -63,6 +63,7 @@ namespace ServerController
             userData.Add(mdlStudentObj.City);//15
             userData.Add(mdlStudentObj.Country);//16
             userData.Add(mdlStudentObj.Phone);//17
+            userData.Add("student");//18
 
             Console.WriteLine("Returning populated arraylist to the client.");
             return userData;
@@ -91,6 +92,7 @@ namespace ServerController
             userData.Add(mdlLandlordObj.City);//15
             userData.Add(mdlLandlordObj.Country);//16
             userData.Add(mdlLandlordObj.Phone);//17
+            userData.Add("landlord");//18
 
             Console.WriteLine("Returning populated arraylist to the client.");
             return userData;
