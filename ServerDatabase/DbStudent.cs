@@ -16,16 +16,77 @@ namespace ServerDatabase
         {
             try
             {
-                DbConnection.Open();
-                DbStudent.CreateCommandMain(studentObj).ExecuteNonQuery();
+                DateTime myDateTime = studentObj.DateOfCreation;
+                string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+
+                studentObj.Email = studentObj.Email + "T" + Thread.CurrentThread.ManagedThreadId.ToString();
+                //DbConnection.Open();
+                //DbStudent.CreateCommandMain(studentObj).ExecuteNonQuery();
+                //SetLastId(studentObj);
+
+                //DbStudent.CreateCommandQueuebased(studentObj).ExecuteNonQuery();
+                //DbStudent.CreateCommandPersonal(studentObj).ExecuteNonQuery();
+
+                //DbConnection.Close();
+                //Console.WriteLine("REGISTRATION : true");
+                //return true;
+
+                string query1 = "insert into ST_Main values ('"
+    + studentObj.Email + "','"
+    + studentObj.Password + "',"
+    + Convert.ToInt32(studentObj.Confirmed) + ","
+    + Convert.ToInt32(studentObj.Student) + ")";
+
+ 
+
+                using (var connection = new SqlConnection(DbConnection.connectionString))
+                using (var command = new SqlCommand(query1, connection))
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+
                 SetLastId(studentObj);
 
-                DbStudent.CreateCommandQueuebased(studentObj).ExecuteNonQuery();
-                DbStudent.CreateCommandPersonal(studentObj).ExecuteNonQuery();
+                string query2 = "insert into ST_Queue values ("
++ studentObj.Id + ","
++ studentObj.Score + ","
++ studentObj.NumberOfChildren + ","
++ Convert.ToInt32(studentObj.Pet) + ","
++ studentObj.NumberOfCohabiters + ","
++ Convert.ToInt32(studentObj.Disabled) + ",'"
++ sqlFormattedDate + "')";
 
-                DbConnection.Close();
-                Console.WriteLine("REGISTRATION : true");
+                string query3 = "insert into ST_Personal values ("
+    + studentObj.Id + ",'"
+    + studentObj.Name + "','"
+    + studentObj.Surname + "','"
+    + studentObj.Address + "','"
+    + studentObj.PostCode + "','"
+    + studentObj.City + "','"
+    + studentObj.Country + "','"
+    + studentObj.Phone + "')";
+
+                using (var connection = new SqlConnection(DbConnection.connectionString))
+                using (var command = new SqlCommand(query2, connection))
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+
+                using (var connection = new SqlConnection(DbConnection.connectionString))
+                using (var command = new SqlCommand(query3, connection))
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+
+
                 return true;
+
             }
             catch (Exception e)
             {
@@ -38,15 +99,35 @@ namespace ServerDatabase
         private static void SetLastId(MdlStudent studentObj) 
         {
             // read Id from first table and make it the same in all other tables that is connected with users
-            string query = "Select ID from ST_Main where email = '" + studentObj.Email + "'";
-            SqlCommand sqlCommand = new SqlCommand(query, DbConnection.dbconn);
-            SqlDataReader sqlReader = sqlCommand.ExecuteReader();
-            while (sqlReader.Read())
+            try
             {
-                studentObj.Id = Convert.ToInt32(sqlReader.GetValue(0));
+                int score = 0;
+                string query = "Select ID from ST_Main where email = '" + studentObj.Email + "'";
+
+                Console.WriteLine("Thread " + Thread.CurrentThread.ManagedThreadId.ToString() + " Executed query: \n     " + query);
+
+                using (var connection = new SqlConnection(DbConnection.connectionString))
+                using (var command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+
+                    using (var sqlReader = command.ExecuteReader())
+                    {
+                        while (sqlReader.Read())
+                        {
+                            studentObj.Id = Convert.ToInt32(sqlReader.GetValue(0));
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception catched: " + e + " Thread: " + Thread.CurrentThread.ManagedThreadId.ToString() + " Time: " + DateTime.Now);
+                DbConnection.Close();
             }
 
-            sqlReader.Close();
+
+
         }
 
         private static SqlCommand CreateCommandMain(MdlStudent studentObj)

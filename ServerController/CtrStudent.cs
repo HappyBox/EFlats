@@ -30,7 +30,7 @@ namespace ServerController
             return false;
         }
         
-        public int GetScore(int studentId)
+        public static int GetScore(int studentId)
         {
             ServerDatabase.DbStudent dbStudentObj = new ServerDatabase.DbStudent();
             return dbStudentObj.GetScore(studentId);

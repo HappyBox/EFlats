@@ -104,17 +104,17 @@ namespace ConsoleClient
 
             //add to wish list
             bool AddToWishlist = false;
-            AddToWishlist = client.AddToWishlist(360, "miropakanec@gmail.com", 60);
+            AddToWishlist = client.AddToWishlist(360, "miropakanec@gmail.com", 1065);
             Console.WriteLine("add to wishlist           | result: " + AddToWishlist);
 
             //add to wishlist existing application
             bool AddToWishlistExistingApplication = false;
-            AddToWishlistExistingApplication = client.AddToWishlist(360, "miropakanec@gmail.com", 60);
+            AddToWishlistExistingApplication = client.AddToWishlist(360, "miropakanec@gmail.com", 1065);
             Console.WriteLine("add to wishlist (fail APP)| result: " + AddToWishlistExistingApplication);
 
             //add to wish list non existing student
             bool AddToWishlistNonExistingStudent = false;
-            AddToWishlistNonExistingStudent = client.AddToWishlist(5000, "miropakanecNonExisting@gmail.com", 60);
+            AddToWishlistNonExistingStudent = client.AddToWishlist(5000, "miropakanecNonExisting@gmail.com", 1065);
             Console.WriteLine("add to wishlist (fail ST) | result: " + AddToWishlistNonExistingStudent);
 
             //add to wish list non existing flat
@@ -124,7 +124,7 @@ namespace ConsoleClient
 
             //remove from wish list
             bool removeFromWishlist = false;
-            removeFromWishlist = client.RemoveFromWishlist(360, 60);
+            removeFromWishlist = client.RemoveFromWishlist(360, 1065);
             Console.WriteLine("remove from wishlist     | result: " + removeFromWishlist);
 
 
@@ -132,13 +132,31 @@ namespace ConsoleClient
             int score = 0;
             score = client.CalculateProfileScore(500, "default5@default.com");
             Console.WriteLine("calculate profile score    | result: " + score );
-*/
+
+
             int score = -1;
             score = client.CalculateApplicationScore(400, "default@default.com", 60);
             Console.WriteLine("Calculate application score() | result: " + score);
 
+*/
+            Console.ReadLine();
+                
+            for(int i = 0; i< 100; i++)
+            {
+                bool registerStudentTest = false;
+                registerStudentTest = client.AddStudent("m"+i, "mypassword", false, false, 0, 0, false, 0, false, DateTime.Now, null, null, null, null, null, null, null);
+                Console.WriteLine("register student          | result: " + registerStudentTest.ToString());
+            }
 
             Console.ReadLine();
+        }
+
+        public static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }

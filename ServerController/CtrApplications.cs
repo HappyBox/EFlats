@@ -10,16 +10,12 @@ namespace ServerController
     {
         public static int CalculateScoreDate(DateTime date)
         {
-            //DateTime applicationDate = GetApplicationDate(studentId, flatId);
-            //compare date and dat.now and return number of days ( -1 bacause it considers today and multiply by our ratio - score point to day (1 -24)
-
             return Convert.ToInt32(((DateTime.Now - date).TotalDays)-1)*24;
         }
 
-        //private DateTime GetApplicationDate(int studentId, int flatId)
-        //{
-        //    ServerDatabase.DbApplications dbApplicationObj = new ServerDatabase.DbApplications();
-        //    return Convert.ToDateTime(dbApplicationObj.GetDate(studentId, flatId));
-        //}
+        public static int SumScores(int scoreDate, int profileScore)
+        {
+            return scoreDate + profileScore;
+        }
     }
 }

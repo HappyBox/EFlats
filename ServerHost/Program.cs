@@ -12,7 +12,7 @@ namespace ServerHost
     {
         static void Main(string[] args)
         {
-            Thread updateQueue = new Thread(new ThreadStart(ServerController.CtrUpdate.UpdateQueue));
+            Thread updateQueue = new Thread(new ThreadStart(ServerController.CtrUpdate.Update));
             Thread host = new Thread(new ThreadStart(RunHost));
 
             host.Start();

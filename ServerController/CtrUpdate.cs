@@ -11,58 +11,42 @@ namespace ServerController
     //24/02/2013 dd/MM/yyyy 
     public class CtrUpdate
     {
-        public static void UpdateQueue()
+        public static void Update()
         {
-            DateTime MyDateTime = DateTime.ParseExact("23:07", "HH:mm", null);
+            DateTime MyDateTime = DateTime.ParseExact("21:08", "HH:mm", null);
 
             Thread.Sleep(5000);
             Console.WriteLine("Update queue has started @ time: " + DateTime.Now.ToString());
 
             while (true)
             {
-                //if (DateTime.Now >= MyDateTime && DateTime.Now <= MyDateTime.AddSeconds(10)) //from x to x + 10sec
-                if(true)
+                if (DateTime.Now >= MyDateTime && DateTime.Now <= MyDateTime.AddSeconds(10)) //from x to x + 10sec
+                //if(true)
                 {
                     Console.WriteLine("Updating the queue...");
-                    Console.WriteLine("Time: " + DateTime.Now.ToString());
+                    Console.WriteLine("START Time: " + DateTime.Now.ToString());
 
                     //update score
-                    UpdateScore();
+                    UpdateScoreQueue();
 
+                    Console.WriteLine("TOTAL FINISH Time: " + DateTime.Now.ToString());
                     Thread.Sleep(20000); //20
                 }
                 Thread.Sleep(2000); //2
             }
         }
 
-        private static void UpdateScore()
+        private static void UpdateScoreQueue()
         {
             try
             {
                 ServerDatabase.DbUpdate dbUpdateObject = new ServerDatabase.DbUpdate();
+                List<MdlApplication> applicationList = dbUpdateObject.UpdateScore();
 
-                Console.WriteLine("Updating Users Appication Scores...");
-                MdlApplication[] applicationArray = new MdlApplication[dbUpdateObject.GetLastRowId()];
+                //score will be updated
+                applicationList = UpdateScore(applicationList);
+                UpdateQueue(applicationList);
 
-                dbUpdateObject.UpdateScore(dbUpdateObject.GetLastRowId()).CopyTo(applicationArray, 0);
-
-                //Console.WriteLine(Convert.ToInt32(applicationArray[0].Id), applicationArray[1].Id, applicationArray[2].Id);
-
-                foreach(MdlApplication element in applicationArray)
-                {
-                    Thread t, t1, t2, t3;
-                    //switch(element.Id % 4)
-                    //{
-                    //    case 0: {  t  = new Thread(() => CalculateInsertScore(element)); t.Start();  Console.WriteLine("Thread: " + t.ManagedThreadId.ToString());  break; }
-                    //    case 1: {  t1 = new Thread(() => CalculateInsertScore(element)); t1.Start(); Console.WriteLine("Thread: " + t1.ManagedThreadId.ToString()); break; }
-                    //    case 2: {  t2 = new Thread(() => CalculateInsertScore(element)); t2.Start(); Console.WriteLine("Thread: " + t2.ManagedThreadId.ToString()); break; }
-                    //    case 3: {  t3 = new Thread(() => CalculateInsertScore(element)); t3.Start(); Console.WriteLine("Thread: " + t3.ManagedThreadId.ToString()); break; }
-                    //}
-
-                    Console.WriteLine(element.Id);
-                    //CalculateInsertScore(element);
-                    Console.WriteLine("Thread: " + Thread.CurrentThread.ManagedThreadId.ToString());
-                }                
             }
             catch(Exception e)
             {
@@ -70,16 +54,88 @@ namespace ServerController
             }
         }
 
-        private static void CalculateInsertScore(MdlApplication element)
+        private static void UpdateQueue(List<MdlApplication> applicationList)
+        {
+            Console.WriteLine("Started Updating Users Appication Queues... @ " + DateTime.Now);
+            applicationList.Sort();
+
+            int lastId = applicationList.First().FlatId;
+            List<MdlApplication> SingleFlatList = new List<MdlApplication>();
+
+            foreach(MdlApplication element in applicationList)
+            {
+                //equal to previous flat
+                if(lastId == element.FlatId)
+                {
+                    SingleFlatList.Add(element);
+                    Console.WriteLine("single flat element added " + element.Id);
+                    //if last value in list execute update function
+                    if(applicationList[applicationList.Count -1] == element)
+                    {
+                        Console.WriteLine("updating queue sf...");
+                        UpdateQueueOneFlat(SingleFlatList);
+                        SingleFlatList.RemoveAll(FlatIdPredicate);
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("updating queue sf...");
+                    UpdateQueueOneFlat(SingleFlatList);
+                    SingleFlatList.RemoveAll(FlatIdPredicate);
+
+                    SingleFlatList.Add(element);
+                    Console.WriteLine("single flat element added " + element.Id);
+                    lastId++;
+                }
+            }
+            Console.WriteLine("Started Updating Users Appication Queues... @ " + DateTime.Now);
+        }
+
+        private static bool FlatIdPredicate(MdlApplication element)
+        {
+            return true;
+        }
+
+        private static void UpdateQueueOneFlat(List<MdlApplication> singleFlatList)
+        {
+            ServerDatabase.DbUpdate dbUpdateObj = new ServerDatabase.DbUpdate();
+            SortByScore sortObj = new SortByScore();
+            int queue = 1;
+            //sort by score
+            singleFlatList.Sort(sortObj);
+
+            foreach(MdlApplication element in singleFlatList)
+            {
+                element.QueueNumber = queue;
+                dbUpdateObj.UpdateQueue(element.Id, element.QueueNumber);
+                queue++;
+            }
+        }
+
+        private static List<MdlApplication> UpdateScore(List<MdlApplication> applicationList)
+        {
+            Console.WriteLine("Started Updating Users Appication Scores @ " + DateTime.Now);
+            Parallel.ForEach(applicationList, element =>
+            {
+                CalculateInsertScore(element);
+            });
+            Console.WriteLine("Finished Updating Users Appication Scores @ " + DateTime.Now);
+            return applicationList;
+        }
+
+        private static MdlApplication CalculateInsertScore(MdlApplication element)
         {
             ServerDatabase.DbUpdate dbUpdateObject = new ServerDatabase.DbUpdate();
-            Console.WriteLine("ID: " + element.Id + "SCORE: " + element.Score);
-            Console.WriteLine("ID: " + element.Id + "SCORE: " + element.Score);
-            Console.WriteLine("ID: " + element.Id + "SCORE: " + element.Score);
-            Console.WriteLine("ID: " + element.Id + "SCORE: " + element.Score);
-            Console.WriteLine("ID: " + element.Id + "SCORE: " + element.Score);
-            if (!dbUpdateObject.UpdateApplicationScore(element.Id, CtrApplications.CalculateScoreDate(Convert.ToDateTime(element.DateOfCreation))))
+            //return bool, pass calculated score and ID
+            int dateScore = CtrApplications.CalculateScoreDate(Convert.ToDateTime(element.DateOfCreation));
+            int profileScore = CtrStudent.GetScore(element.StudentId);
+            element.Score = CtrApplications.SumScores(dateScore, profileScore);
+
+            if (!dbUpdateObject.UpdateApplicationScore(element.Id, element.Score))
                 Console.WriteLine("Error while updating Application score. ID: " + element.Id + " Thread: " + Thread.CurrentThread.ManagedThreadId.ToString() + "\n Time: " + DateTime.Now);
+
+            return element;
         }
     }
 }

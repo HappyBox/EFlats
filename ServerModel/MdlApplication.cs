@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace ServerModel
 {
     [DataContract]
-    public class MdlApplication
+    public class MdlApplication : IComparable<MdlApplication>
     {
         private int _id;
         private int _studentId;
@@ -30,6 +30,11 @@ namespace ServerModel
         public MdlApplication()
         {
 
+        }
+
+        public int CompareTo(MdlApplication other)
+        {
+            return this.FlatId.CompareTo(other.FlatId);
         }
 
         [DataMember(Name = "ID", Order = 1)]
@@ -72,6 +77,14 @@ namespace ServerModel
         {
             get { return _queueNumber; }
             set { _queueNumber = value; }
+        }
+    }
+
+    public class SortByScore : IComparer<MdlApplication>
+    {
+        public int Compare(MdlApplication x, MdlApplication y)
+        {
+            return -x.Score.CompareTo(y.Score);  
         }
     }
 }
