@@ -28,12 +28,12 @@ namespace ServerController
         }
 
         public bool AddApartment(string landlordEmail, string type, string address, string zipCode, 
-            double rentPrice, double deposit, DateTime avaiable, DateTime dateFormCreation)
+            double rentPrice, double deposit, DateTime avaiable, DateTime dateFormCreation, string description)
         {
             ServerDatabase.DbFlat dbFlatObj = new ServerDatabase.DbFlat();
             ServerDatabase.DbCheckEmailExists dcCheckEmailObj = new ServerDatabase.DbCheckEmailExists();
             ServerModel.MdlFlat mdlFlat = new ServerModel.MdlFlat(landlordEmail, type, dateFormCreation, avaiable, 
-                rentPrice, deposit, address, zipCode);
+                rentPrice, deposit, address, zipCode, description);
             //if email exists add flat
             if(dcCheckEmailObj.checkLandlordEmailExists(landlordEmail))
                 return dbFlatObj.Add(mdlFlat);

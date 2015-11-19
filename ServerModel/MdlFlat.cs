@@ -20,9 +20,10 @@ namespace ServerModel
         private double _rentPrice;
         private double _deposit;
         private string _postCode;
+        private string _description;
 
         //full constructor
-        public MdlFlat(string landlordEmail, string type, DateTime dateFormCreation, DateTime avaiable, double rentPrice, double deposit, string address, string postCode)
+        public MdlFlat(string landlordEmail, string type, DateTime dateFormCreation, DateTime avaiable, double rentPrice, double deposit, string address, string postCode, string description)
         {
             //_email = email;
             _landlordEmail = landlordEmail;
@@ -33,6 +34,12 @@ namespace ServerModel
             _address = address;
             _postCode = postCode;
             _deposit = deposit;
+            _description = description;
+        }
+
+        public MdlFlat()
+        {
+
         }
 
         [DataMember(Name = "ID", Order = 1)]
@@ -96,6 +103,13 @@ namespace ServerModel
         {
             get { return _postCode; }
             set { _postCode = value; }
+        }
+
+        [DataMember(Order = 11)]
+        public string Description
+        {
+            get { return _description; }
+            set { _description = value; }
         }
     }
 }

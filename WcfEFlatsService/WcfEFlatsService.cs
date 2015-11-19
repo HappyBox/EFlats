@@ -71,7 +71,7 @@ namespace WcfEFlatsService
             }
         }
 
-        public bool AddApartment(string landlordEmail, string type, string address, string zipCode, double rentPrice, double deposit, DateTime avaiable, DateTime dateFormCreation)
+        public bool AddApartment(string landlordEmail, string type, string address, string zipCode, double rentPrice, double deposit, DateTime avaiable, DateTime dateFormCreation, string description)
         {
             ctrLandlordObj = new ServerController.CtrLandlord();
 
@@ -83,7 +83,7 @@ namespace WcfEFlatsService
                      Thread.CurrentThread.ManagedThreadId.ToString(), DateTime.Now.ToString());
 
                 //call add appartment method
-                return ctrLandlordObj.AddApartment(landlordEmail, type, address, zipCode, rentPrice, deposit, avaiable, dateFormCreation);
+                return ctrLandlordObj.AddApartment(landlordEmail, type, address, zipCode, rentPrice, deposit, avaiable, dateFormCreation, description);
             }
         }
 

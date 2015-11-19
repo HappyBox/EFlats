@@ -54,7 +54,7 @@ namespace ServerController
             }
         }
 
-        private static void UpdateQueue(List<MdlApplication> applicationList)
+        public static void UpdateQueue(List<MdlApplication> applicationList)
         {
             Console.WriteLine("Started Updating Users Appication Queues... @ " + DateTime.Now);
             applicationList.Sort();

@@ -57,7 +57,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="AddFlatTests.cs" />
+    <Compile Include="FlatTests.cs" />
     <Compile Include="ApplicationsTests.cs" />
     <Compile Include="GetUserData.cs" />
     <Compile Include="LoginTests.cs" />

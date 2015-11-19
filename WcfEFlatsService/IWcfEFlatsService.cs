@@ -24,7 +24,7 @@ namespace WcfEFlatsService
         bool Login(string email, string password);
 
         [OperationContract]
-        bool AddApartment(string landlordEmail, string type, string address, string zipCode, double rentPrice, double deposit, DateTime avaiable, DateTime dateFormCreation);
+        bool AddApartment(string landlordEmail, string type, string address, string zipCode, double rentPrice, double deposit, DateTime avaiable, DateTime dateFormCreation, string description);
 
         [OperationContract]
         ArrayList GetData(string email);
